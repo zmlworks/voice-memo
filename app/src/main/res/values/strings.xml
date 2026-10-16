@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Japanese UI (default locale). -->
+<resources>
+    <string name="app_label">縦書き音声メモ</string>
+    <string name="cd_text">縦書きのメモ本文</string>
+    <string name="empty_hint">長押しで話してください</string>
+    <string name="gesture_hint">タップ:カーソル · 長押し:音声入力 · 横スワイプ:スクロール · 縦スワイプ:選択 · ピンチ:文字サイズ</string>
+
+    <string name="back">← 一覧</string>
+    <string name="mic">🎤 音声</string>
+    <string name="undo">↶ 戻す</string>
+    <string name="kbd_edit">⌨ 横書き</string>
+    <string name="vertical_view">縦書き表示</string>
+    <string name="share">共有</string>
+    <string name="delete_memo">削除</string>
+    <string name="delete_memo_q">このメモを削除しますか？</string>
+    <string name="settings">設定</string>
+    <string name="copy">コピー</string>
+    <string name="cut">切り取り</string>
+    <string name="delete">削除</string>
+    <string name="select_all">全選択</string>
+    <string name="close">✕</string>
+    <string name="open">開く</string>
+    <string name="voice">音声入力</string>
+    <string name="copied">コピーしました</string>
+    <string name="cut_done">切り取りました</string>
+    <string name="undone">元に戻しました（%1$s）</string>
+    <string name="untitled">（空のメモ）</string>
+    <string name="edit_hint">ここでキーボード入力できます。「縦書き表示」で戻ります。</string>
+    <string name="nothing_to_share">共有する文字がありません</string>
+    <string name="no_share_app">共有できるアプリがありません</string>
+    <string name="err_save">保存できませんでした</string>
+
+    <string name="new_memo">＋ 新規</string>
+    <string name="list_empty">メモはまだありません。\n「＋ 新規」で作成し、本文を長押しして話してください。</string>
+    <string name="list_hint">タップで開く · 長押しで共有／削除</string>
+    <string name="list_meta">%1$s · %2$d文字</string>
+
+    <string name="rec_dot" translatable="false">●</string>
+    <string name="rec_listening">録音準備中…</string>
+    <string name="rec_speak">録音中 — 話してください</string>
+    <string name="rec_finishing">変換中…</string>
+    <string name="rec_hold">（指を離すと停止）</string>
+    <string name="rec_tap_stop">（タップまたは「停止」で終了）</string>
+    <string name="stop">■ 停止</string>
+    <string name="perm_ok">マイクを許可しました。もう一度長押しして話してください。</string>
+    <string name="perm_denied">マイクの許可がないため音声入力できません（設定アプリから許可できます）。</string>
+    <string name="no_recognizer_title">音声認識が使えません</string>
+    <string name="no_recognizer">この端末に音声認識サービスが見つかりません。Google アプリ（または「Speech Recognition &amp; Synthesis」）をインストール／有効化し、日本語を設定してください。キーボード編集は引き続き使えます。</string>
+    <string name="err_network">ネットワークエラー（オフライン音声パックがあればオフラインで認識できます）</string>
+    <string name="err_audio">マイクを使えませんでした（他のアプリが使用中？）</string>
+    <string name="err_permission">マイクの許可がありません</string>
+    <string name="err_busy">音声認識が使用中です。少し待ってからもう一度。</string>
+    <string name="err_language">日本語の音声認識が使えません（言語パックを確認してください）</string>
+    <string name="err_nomatch">聞き取れませんでした</string>
+    <string name="err_idle">無音が続いたため録音を終了しました</string>
+    <string name="err_client">音声認識エラー</string>
+
+    <string name="set_size">文字サイズ: %1$d sp</string>
+    <string name="set_mode">長押しの音声入力</string>
+    <string name="set_mode_hold">押している間だけ録音（離すと停止）</string>
+    <string name="set_mode_continuous">連続録音（長押しで開始、タップ／停止で終了）</string>
+    <string name="set_offline">オフライン認識を優先（使えなければ自動でオンラインへ）</string>
+    <string name="set_note">音声認識は端末の音声認識サービス（通常は Google アプリ）が行います。このアプリ自体はインターネット権限を持ちません。</string>
+</resources>
