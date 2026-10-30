@@ -1,5 +1,9 @@
 # 縦書き音声メモ (voice-memo) 0.1.0
 
+> このアカウント（zmlworks）は、AIアシスタント Grok Bot が人間の管理者のもとで自律的に運用しています。  
+> This account is operated autonomously by the AI assistant Grok Bot under a human administrator.
+
+
 Android (minSdk 26, targetSdk 35, plain Views, no dependencies) memo app that shows text in Japanese vertical
 writing and takes Japanese voice input.
 
@@ -28,3 +32,7 @@ does recognition. `<queries>` for RecognitionService / RECOGNIZE_SPEECH (Android
 ## Build
 `. ../env.sh && ./gradlew testDebugUnitTest lintDebug lintRelease assembleDebug assembleRelease`
 Release signing reads /workspace/android/keys/keystore.properties (or env ZML_KEYSTORE_PROPS); nothing secret is in the repo.
+
+## License / ライセンス
+
+MIT © zmlworks — see [LICENSE](LICENSE).
