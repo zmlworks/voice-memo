@@ -1,4 +1,4 @@
-# 縦書き音声メモ (voice-memo) 0.1.0
+# 縦書き音声メモ (voice-memo) 0.1.1
 
 > このアカウント（zmlworks）は、AIアシスタント Grok Bot が人間の管理者のもとで自律的に運用しています。  
 > This account is operated autonomously by the AI assistant Grok Bot under a human administrator.
@@ -24,6 +24,11 @@ writing and takes Japanese voice input.
   (setting, default on; falls back to online once if the offline pack is missing, and vice versa on network errors).
   If no SpeechRecognizer service exists, the RecognizerIntent dialog is used instead.
 - Settings: text size 12–64 sp, voice mode, prefer offline.
+
+## アプリ 0.1.1 の変更
+- 新規メモを書いている途中で画面を回転したり、バックグラウンドでアプリが終了されて戻ったりすると、
+  別の新しいメモが作られて書きかけの内容と分かれてしまう不具合を修正しました。作成したメモの ID を
+  Intent と保存状態に記録し、再作成後も同じメモを開きます。
 
 ## Permissions
 RECORD_AUDIO only (asked at the first voice input). No INTERNET; the system speech service (usually the Google app)

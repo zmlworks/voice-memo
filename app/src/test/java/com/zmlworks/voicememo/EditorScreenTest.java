@@ -65,6 +65,29 @@ public class EditorScreenTest {
     }
 
     @Test
+    public void newMemoKeepsItsIdAcrossRecreation() {
+        MemoStore store = MemoStore.of(RuntimeEnvironment.getApplication());
+        int before = store.list().size();
+        Intent i = new Intent(RuntimeEnvironment.getApplication(), EditorActivity.class);   // "new memo": no id
+        ActivityController<EditorActivity> ac = Robolectric.buildActivity(EditorActivity.class, i).setup();
+        assertEquals(before + 1, store.list().size());
+        long id = ac.get().getIntent().getLongExtra(EditorActivity.EXTRA_ID, -1);
+        assertTrue(id >= 0);
+        ac.recreate();   // rotation: same memo, no second file
+        ShadowLooper.idleMainLooper();
+        assertEquals(before + 1, store.list().size());
+        assertEquals(id, ac.get().getIntent().getLongExtra(EditorActivity.EXTRA_ID, -1));
+
+        // process death: only the saved instance state survives
+        android.os.Bundle saved = new android.os.Bundle();
+        ac.saveInstanceState(saved);
+        ActivityController<EditorActivity> ac2 = Robolectric.buildActivity(EditorActivity.class,
+                new Intent(RuntimeEnvironment.getApplication(), EditorActivity.class)).setup(saved);
+        assertEquals(before + 1, store.list().size());
+        assertEquals(id, ac2.get().getIntent().getLongExtra(EditorActivity.EXTRA_ID, -1));
+    }
+
+    @Test
     public void gesturesAndScreenshot() throws Exception {
         StringBuilder longText = new StringBuilder(SAMPLE);
         for (int i = 0; i < 12; i++) longText.append("\n追加の行").append(i + 1).append("：あいうえおかきくけこさしすせそ");

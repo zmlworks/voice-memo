@@ -56,7 +56,8 @@ public class EditorActivity extends Activity implements VerticalTextView.Listene
     protected void onCreate(Bundle b) {
         super.onCreate(b);
         store = MemoStore.of(this);
-        id = getIntent().getLongExtra(EXTRA_ID, -1);
+        id = b != null ? b.getLong("id", -1) : -1;
+        if (id < 0) id = getIntent().getLongExtra(EXTRA_ID, -1);
         if (id < 0 || !store.exists(id)) {
             try { id = store.create(System.currentTimeMillis()); } catch (IOException e) {
                 Toast.makeText(this, R.string.err_save, Toast.LENGTH_LONG).show();
@@ -64,6 +65,8 @@ public class EditorActivity extends Activity implements VerticalTextView.Listene
                 return;
             }
         }
+        // remember the memo we created: rotation / process death must reopen it, not start another one
+        getIntent().putExtra(EXTRA_ID, id);
         savedText = store.load(id);
         buildUi();
         vtv.setText(savedText, savedText.length());
@@ -344,6 +347,7 @@ public class EditorActivity extends Activity implements VerticalTextView.Listene
     @Override
     protected void onSaveInstanceState(Bundle out) {
         super.onSaveInstanceState(out);
+        out.putLong("id", id);
         if (vtv != null) out.putBundle("vtv", vtv.saveState());
         out.putBoolean("editMode", editMode);
     }
